@@ -1,4 +1,6 @@
 import { ProxyState } from "../AppState.js";
+import { getHouseForm } from "../Components/HouseForm.js"; 
+import {housesService } from "../Services/HousesService.js"
 
 
 function _drawHouses(){
@@ -6,18 +8,17 @@ function _drawHouses(){
   let houses = ProxyState.houses
 
   let template = ``
-  houses.forEach(home =>  {
-    
-  });
 
-  document.getElementById('listings').innerHTML = ' The Houses go here'
+  houses.forEach(home => template += home.Template)
+  // console.log(template);
+
+  document.getElementById('listings').innerHTML = template
 }
-
-
 export class HousesController{
   constructor(){
     console.log('Houses controller loaded', ProxyState.houses);
-
+    ProxyState.on( 'houses', _drawHouses)
+    
   }
 
   viewHouses(){
