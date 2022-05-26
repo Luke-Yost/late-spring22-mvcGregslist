@@ -20,7 +20,7 @@ export class House{
       <h4 class="text-center">${this.name} | Price: ${this.price} </h4>
       <h5 class="text-center">Total Rooms: ${this.roomnumber} | Sqr Fotage: ${this.sqrfootage}</h5>
         <h5 class="text-center">Bedrooms: ${this.bedrooms}| Bathrooms: ${this.bathrooms}</h5>
-        <button class="btn btn-danger" onclick="app.houseController.deleteHouse('${this.id}')"></button>
+        <button class="btn btn-danger" onclick="app.housesController.deleteHouse('${this.id}')"><i class="mdi mdi-delete"></i></button>
     </div>
   </div>
     `
