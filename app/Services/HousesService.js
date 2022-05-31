@@ -1,11 +1,11 @@
 import { ProxyState } from "../AppState.js";
-
 import { House } from "../Models/HouseModel.js";
 
 class HousesService {
 
-  createHouse(houseData){
+  async createHouse(houseData){
     console.log('service', houseData);
+    const res = await axios.
     ProxyState.houses = [...ProxyState.houses, new House(houseData)]
     console.log(ProxyState.houses);
   }

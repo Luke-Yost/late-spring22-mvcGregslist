@@ -30,7 +30,11 @@ export class HousesController{
     _drawHouses()
   }
 
-  createHouse(){
+  async getHouses(){
+    // await housesService.getHouses()
+  }
+
+  async createHouse(){
     window.event.preventDefault()
     let form = window.event.target
     console.log('form submitted', form);
@@ -51,6 +55,23 @@ export class HousesController{
     form.reset() 
 
     bootstrap.Modal.getOrCreateInstance(document.getElementById('form-modal')).hide()
+  }
+
+  async updateHouse(id){
+    window.event.preventDefault()
+    console.log('hoosdateopdate', id);
+    let form = window.event.target
+    let houseData = {
+      name : form.name.value,
+      roomnumber : form.roomnumber.value,
+      bedrooms : form.bedrooms.value,
+      bathrooms : form.bathrooms.value,
+      sqrfootage : form.sqrfootage.value,
+      price : form.price.value,
+      image : form.image.value,
+      
+    }
+    
   }
 
   deleteHouse(id){
