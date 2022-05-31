@@ -19,6 +19,7 @@ export class HousesController{
   constructor(){
     console.log('Houses controller loaded', ProxyState.houses);
     ProxyState.on( 'houses', _drawHouses)
+    this.getHouses()
     this.viewHouses()
 
   }
@@ -31,7 +32,7 @@ export class HousesController{
   }
 
   async getHouses(){
-    // await housesService.getHouses()
+    await housesService.getHouses()
   }
 
   async createHouse(){
@@ -40,13 +41,15 @@ export class HousesController{
     console.log('form submitted', form);
 
     let houseData = {
-      name : form.name.value,
-      roomnumber : form.roomnumber.value,
+      year: form.year.value,
+      levels: form.levels.value,
+      description: form.name.value,
+      
       bedrooms : form.bedrooms.value,
       bathrooms : form.bathrooms.value,
-      sqrfootage : form.sqrfootage.value,
+    
       price : form.price.value,
-      image : form.image.value,
+      imgUrl : form.image.value,
       
     }
     console.log('newhouse', houseData);
@@ -62,16 +65,19 @@ export class HousesController{
     console.log('hoosdateopdate', id);
     let form = window.event.target
     let houseData = {
-      name : form.name.value,
-      roomnumber : form.roomnumber.value,
+      year: form.year.value,
+      levels: form.levels.value,
+      description: form.name.value,
+      
       bedrooms : form.bedrooms.value,
       bathrooms : form.bathrooms.value,
-      sqrfootage : form.sqrfootage.value,
+    
       price : form.price.value,
-      image : form.image.value,
+      imgUrl : form.image.value,
+      
       
     }
-    
+      await housesService.updateHouse(houseData, id)
   }
 
   deleteHouse(id){

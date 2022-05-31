@@ -16,8 +16,8 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/HouseModel').House[]} */
   houses = [
-    new House({name: 'hammock',roomnumber: 0,bedrooms: 0.5, bathrooms: 0, sqrfootage: 5, price: 50, image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.RWyxt_DMeGWmwgZ0h7fFLwHaHa%26pid%3DApi&f=1'}), 
-    new House({name: 'shed',roomnumber: 1,bedrooms: 1, bathrooms: 0, sqrfootage:40, price: 250, image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.S5rIAbV1sni1LSFNPvJjiAHaFj%26pid%3DApi&f=1'} ), 
+    // new House({name: 'hammock',roomnumber: 0,bedrooms: 0.5, bathrooms: 0, sqrfootage: 5, price: 50, image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.RWyxt_DMeGWmwgZ0h7fFLwHaHa%26pid%3DApi&f=1'}), 
+    // new House({name: 'shed',roomnumber: 1,bedrooms: 1, bathrooms: 0, sqrfootage:40, price: 250, image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.S5rIAbV1sni1LSFNPvJjiAHaFj%26pid%3DApi&f=1'} ), 
   ]
 }
 
