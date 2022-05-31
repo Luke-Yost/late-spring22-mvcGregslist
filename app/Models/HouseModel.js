@@ -9,7 +9,7 @@ export class House{
     this.sqrfootage = houseData.sqrfootage 
     this.price = houseData.price
     this.image = houseData.image 
-    this.id = generateId()
+    this.id = houseData.id || generateId()
   }
 
   get Template(){

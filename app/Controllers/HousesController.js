@@ -9,7 +9,7 @@ function _drawHouses(){
 
   let template = ``
 
-  houses.forEach(home => template += home.Template)
+  houses.forEach(home => { template += home.Template})
   // console.log(template);
 
   document.getElementById('listings').innerHTML = template
@@ -36,13 +36,13 @@ export class HousesController{
     console.log('form submitted', form);
 
     let houseData = {
-      name : form.make.name,
-      roomnumber : form.make.roomnumber,
-      bedrooms : form.make.bedrooms,
-      bathrooms : form.make.bathrooms,
-      sqrfootage : form.make.sqrfootage,
-      price : form.make.price,
-      image : form.make.image,
+      name : form.name.value,
+      roomnumber : form.roomnumber.value,
+      bedrooms : form.bedrooms.value,
+      bathrooms : form.bathrooms.value,
+      sqrfootage : form.sqrfootage.value,
+      price : form.price.value,
+      image : form.image.value,
       
     }
     console.log('newhouse', houseData);
@@ -51,6 +51,11 @@ export class HousesController{
     form.reset() 
 
     bootstrap.Modal.getOrCreateInstance(document.getElementById('form-modal')).hide()
+  }
+
+  deleteHouse(id){
+    console.log('delete house', id);
+    housesService.deleteHouse(id)
   }
 
 }
